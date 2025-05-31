@@ -1,1 +1,127 @@
-{"id":"leelachess","username":"LeelaChess","perfs":{"blitz":{"games":12447,"rating":2658,"rd":152,"prog":7,"prov":true},"bullet":{"games":7828,"rating":2601,"rd":159,"prog":-5,"prov":true},"correspondence":{"games":0,"rating":1500,"rd":500,"prog":0,"prov":true},"classical":{"games":28,"rating":2240,"rd":206,"prog":-49,"prov":true},"rapid":{"games":4074,"rating":2493,"rd":162,"prog":22,"prov":true}},"title":"BOT","verified":true,"createdAt":1523743988559,"profile":{"country":"CA","firstName":"Leela","bio":"Leela Chess Zero playing full strength.\r\n\r\nI play Ultrabullet, Bullet, Blitz and Rapid. Send me a challenge and wait for your turn!\r\n\r\nIf you are titled and want a longer matchup, please DM me.\r\n\r\nDonations: paypal.me/careless25","lastName":"Chess","links":"lczero.org\r\nhttps://github.com/glinscott/leela-chess\r\nhttps://discord.gg/pKujYxD\r\nhttps://lichess.org/blog/WtNG7CcAAFMTTHPj/gm-andrew-tang-vs-leela-chess-zero\r\npaypal.me/careless25"},"seenAt":1612507810851,"playTime":{"total":15995698,"tv":13223545},"url":"https://lichess.org/@/LeelaChess","count":{"all":54765,"rated":28023,"ai":299,"draw":2212,"drawH":2175,"loss":2456,"lossH":2264,"win":50097,"winH":50027,"bookmark":0,"playing":0,"import":4,"me":0},"followable":true,"following":false,"blocking":false,"followsYou":false}
+{
+  "id": "mary",
+  "username": "Mary",
+  "perfs": {
+    "bullet": {
+      "games": 119,
+      "rating": 1066,
+      "rd": 101,
+      "prog": -1
+    },
+    "blitz": {
+      "games": 34,
+      "rating": 1007,
+      "rd": 55,
+      "prog": -59
+    },
+    "rapid": {
+      "games": 134,
+      "rating": 1021,
+      "rd": 70,
+      "prog": 26
+    },
+    "classical": {
+      "games": 451,
+      "rating": 1136,
+      "rd": 78,
+      "prog": -1
+    },
+    "correspondence": {
+      "games": 35,
+      "rating": 1049,
+      "rd": 45,
+      "prog": 15
+    },
+    "chess960": {
+      "games": 52,
+      "rating": 996,
+      "rd": 72,
+      "prog": -9
+    },
+    "kingOfTheHill": {
+      "games": 1998,
+      "rating": 1169,
+      "rd": 79,
+      "prog": -13
+    },
+    "threeCheck": {
+      "games": 6,
+      "rating": 946,
+      "rd": 52,
+      "prog": 32
+    },
+    "antichess": {
+      "games": 79,
+      "rating": 1143,
+      "rd": 48,
+      "prog": 61
+    },
+    "atomic": {
+      "games": 239,
+      "rating": 978,
+      "rd": 76,
+      "prog": 22
+    },
+    "horde": {
+      "games": 246,
+      "rating": 1031,
+      "rd": 108,
+      "prog": -28
+    },
+    "crazyhouse": {
+      "games": 473,
+      "rating": 1063,
+      "rd": 88,
+      "prog": 2
+    },
+    "puzzle": {
+      "games": 37,
+      "rating": 977,
+      "rd": 86,
+      "prog": 26
+    }
+  },
+  "flair": "food-drink.coconut",
+  "createdAt": 1744526339498,
+  "profile": {
+    "location": "Mary City",
+    "cfcRating": 1173,
+    "rcfRating": 897,
+    "flag": "MF",
+    "dsbRating": 1110,
+    "fideRating": 1050,
+    "ecfRating": 1249,
+    "uscfRating": 1217,
+    "bio": "The elementary form of value of a commodily is contained in the equation, expressing its value relation to another commodity of a different kind, or in its exchange relation to the same. The value of commodity A is qualitatively expressed by the fact that commodity B is directly exchangeable with it. Its value is quantitively expressed by the fact,",
+    "links": "https://en.wikipedia.org/wiki/Joni_Mitchell\nhttps://en.wikipedia.org/wiki/Srinivasa_Ramanujan\nhttps://en.wikipedia.org/wiki/Atheism\nhttps://lichess.org\nhttps://en.wikipedia.org/wiki/Mahatma_Gandhi"
+  },
+  "seenAt": 1744677685927,
+  "playTime": {
+    "total": 14336,
+    "tv": 0
+  },
+  "url": "http://localhost:8080/@/Mary",
+  "count": {
+    "all": 5251,
+    "rated": 4200,
+    "ai": 0,
+    "draw": 250,
+    "drawH": 250,
+    "loss": 2418,
+    "lossH": 2418,
+    "win": 2583,
+    "winH": 2583,
+    "bookmark": 0,
+    "playing": 0,
+    "import": 0,
+    "me": 1
+  },
+  "streamer": {
+    "twitch": {
+      "channel": "https://www.twitch.tv/lichessdotorg"
+    }
+  },
+  "followable": true,
+  "following": false,
+  "blocking": false
+}

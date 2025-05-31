@@ -1,5 +1,6 @@
 use crate::model::{puzzles, PerfType, Request, Title};
 use serde::{Deserialize, Serialize};
+use serde_with::skip_serializing_none;
 
 #[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct User {
@@ -8,7 +9,7 @@ pub struct User {
 
 #[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct Glicko {
-    pub rating: f64,
+    pub rating: u32,
     pub deviation: f64,
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -102,22 +103,24 @@ pub struct ResultStreak {
     pub loss: StreakSet,
 }
 
+#[skip_serializing_none]
 #[derive(Clone, Debug, Deserialize, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct PlayStreak {
     #[serde(rename = "nb")]
     pub game_count: StreakSet,
     pub time: StreakSet,
-    pub last_date: String,
+    pub last_date: Option<String>,
 }
 
+#[skip_serializing_none]
 #[derive(Clone, Debug, Deserialize, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Stat {
     pub perf_type: puzzles::Perf,
     pub id: String,
-    pub highest: RatingExtreme,
-    pub lowest: RatingExtreme,
+    pub highest: Option<RatingExtreme>,
+    pub lowest: Option<RatingExtreme>,
     pub best_wins: WinExtremes,
     pub worst_losses: WinExtremes,
     pub count: Count,

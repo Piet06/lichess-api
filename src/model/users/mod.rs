@@ -31,7 +31,23 @@ pub struct UserExtended {
     pub followable: bool,
     pub following: bool,
     pub blocking: bool,
-    pub follows_you: bool,
+    pub follows_you: Option<bool>,
+    pub streamer: Option<UserStreamer>,
+}
+
+#[skip_serializing_none]
+#[derive(Clone, Debug, Deserialize, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct UserStreamer {
+    pub twitch: Option<UserStream>,
+    pub youtube: Option<UserStream>,
+}
+
+#[skip_serializing_none]
+#[derive(Clone, Debug, Deserialize, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct UserStream {
+    pub channel: String,
 }
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -59,6 +75,7 @@ pub struct User {
     pub id: String,
     pub username: String,
     pub perfs: Perfs,
+    pub flair: Option<String>,
     pub created_at: i64,
     pub disabled: Option<bool>,
     pub tos_violation: Option<bool>,
@@ -74,6 +91,7 @@ pub struct User {
 #[derive(Clone, Debug, Deserialize, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Perfs {
+    pub antichess: Option<Perf>,
     pub chess960: Option<Perf>,
     pub atomic: Option<Perf>,
     pub racing_kings: Option<Perf>,
@@ -82,10 +100,12 @@ pub struct Perfs {
     pub king_of_the_hill: Option<Perf>,
     pub bullet: Option<Perf>,
     pub correspondence: Option<Perf>,
+    pub crazyhouse: Option<Perf>,
     pub horde: Option<Perf>,
     pub puzzle: Option<Perf>,
     pub classical: Option<Perf>,
     pub rapid: Option<Perf>,
+    pub threeCheck: Option<Perf>,
     pub streak: Option<Storm>,
 }
 
@@ -95,6 +115,7 @@ pub struct Perf {
     pub rating: u32,
     pub rd: u32,
     pub prog: i32,
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub prov: Option<bool>,
 }
 
@@ -110,17 +131,22 @@ pub struct PlayTime {
     pub tv: u32,
 }
 
+#[skip_serializing_none]
 #[derive(Clone, Debug, Deserialize, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Profile {
     pub country: Option<String>,
     pub location: Option<String>,
     pub bio: Option<String>,
+    pub flag: Option<String>,
     pub first_name: Option<String>,
     pub last_name: Option<String>,
     pub fide_rating: Option<u32>,
+    pub rcf_rating: Option<u32>,
     pub uscf_rating: Option<u32>,
     pub ecf_rating: Option<u32>,
+    pub cfc_rating: Option<u32>,
+    pub dsb_rating: Option<u32>,
     pub links: Option<String>,
 }
 

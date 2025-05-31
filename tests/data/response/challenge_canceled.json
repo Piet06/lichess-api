@@ -1,43 +1,38 @@
 {
     "type": "challengeCanceled",
     "challenge": {
-        "id": "7pGLxJ4F",
-        "url": "https://lichess.org/VU0nyvsW",
-        "status": "created",
+        "id": "vN6JvOli",
+        "url": "https://lichess.org/vN6JvOli",
+        "status": "canceled",
         "challenger": {
-            "id": "lovlas",
-            "name": "Lovlas",
-            "title": "IM",
-            "rating": 2506,
-            "patron": true,
-            "online": true,
-            "lag": 24
+            "id": "elena",
+            "name": "Elena",
+            "rating": 2308,
+            "title": "WIM",
+            "patron": true
         },
         "destUser": {
-            "id": "thibot",
-            "name": "thibot",
-            "rating": 1500,
-            "provisional": true,
-            "online": true,
-            "lag": 45
+            "id": "diego",
+            "name": "Diego",
+            "rating": 1941,
+            "title": null,
+            "flair": "smileys.winking-face-with-tongue"
         },
         "variant": {
             "key": "standard",
             "name": "Standard",
             "short": "Std"
         },
-        "rated": true,
+        "rated": false,
+        "speed": "correspondence",
         "timeControl": {
-            "type": "clock",
-            "limit": 300,
-            "increment": 25,
-            "show": "5+25"
+            "type": "unlimited"
         },
         "color": "random",
-        "speed": "rapid",
+        "finalColor": "white",
         "perf": {
-            "icon": "#",
-            "name": "Rapid"
+            "icon": "",
+            "name": "Correspondence"
         }
     }
 }

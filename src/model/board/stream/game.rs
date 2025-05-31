@@ -118,13 +118,14 @@ pub struct GameEventAI {
     pub ai_level: u32,
 }
 
-#[skip_serializing_none]
 #[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct GameEventHuman {
     pub id: String,
     pub name: String,
     pub title: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub rating: Option<u32>,
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub provisional: Option<bool>,
 }
 

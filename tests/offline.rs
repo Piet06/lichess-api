@@ -32,8 +32,12 @@ pub fn board_game_stream() {
     test_response_model::<board::stream::game::Event>("game_state_resign");
     test_response_model::<board::stream::game::Event>("chat_line");
     test_response_model::<board::stream::game::Event>("chat_line_spectator");
-    test_response_model::<board::stream::game::Event>("opponent_gone_false");
-    test_response_model::<board::stream::game::Event>("opponent_gone_true");
+    test_response_model::<board::stream::game::Event>("opponent_gone");
+}
+
+#[test]
+pub fn challenge_created() {
+    test_response_model::<challenges::ChallengeCreated>("challenge_created");
 }
 
 #[test]
@@ -100,6 +104,7 @@ pub fn users() {
     test_response_model::<Vec<users::activity::Activity>>("activities");
     test_response_model::<Vec<users::StreamingUser>>("streamers");
     test_response_model::<Vec<users::Note>>("notes");
+    test_response_model::<users::UserExtended>("public_user_data");
 }
 
 fn test_response_model<Model: Serialize + DeserializeOwned>(file_name: &str) {
@@ -110,9 +115,9 @@ fn test_response_model<Model: Serialize + DeserializeOwned>(file_name: &str) {
 fn test_model<Model: Serialize + DeserializeOwned>(path: String) {
     let model_string = fs::read_to_string(path).expect("Unable to read file.");
     let model_json: serde_json::Value =
-        serde_json::from_str(&model_string).expect("Unable to serialize model into json value.");
+        serde_json::from_str(&model_string).expect("Unable to deserialize json string into json value.");
     let model: Model =
-        serde_json::from_str(&model_string).expect("Unable to deserialize json string to model.");
+        serde_json::from_str(&model_string).expect("Unable to deserialize json string into model.");
     let reserialized_model_json: serde_json::Value =
         serde_json::to_value(&model).expect("Unable to serialize model to json value.");
 

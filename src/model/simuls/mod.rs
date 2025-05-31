@@ -5,6 +5,7 @@ use super::{Title, Variant};
 
 pub mod current;
 
+#[skip_serializing_none]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Simul {
@@ -32,9 +33,11 @@ pub struct Simul {
 pub struct Host {
     pub id: String,
     pub name: String,
+    pub flair: Option<String>,
     pub rating: u32,
     pub title: Option<Title>,
     pub game_id: Option<String>,
     pub online: Option<bool>,
     pub provisional: Option<bool>,
+    pub patron: Option<bool>,
 }

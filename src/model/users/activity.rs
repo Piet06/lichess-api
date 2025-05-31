@@ -1,6 +1,7 @@
 use crate::model::{Color, PerfType, Request};
 use serde::{Deserialize, Serialize};
 use std::{collections::HashMap, ops::Range};
+use serde_with::skip_serializing_none;
 
 #[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct Interval {
@@ -134,7 +135,7 @@ pub struct Team {
     pub name: String,
 }
 
-#[serde_with::skip_serializing_none]
+#[skip_serializing_none]
 #[derive(Clone, Debug, Deserialize, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Activity {

@@ -8,7 +8,7 @@ pub mod list;
 pub mod open;
 pub mod start_clocks;
 
-use crate::model::{Color, Compat, Days, LightUser, Speed, Variant, VariantKey};
+use crate::model::{Color, Compat, Days, LightUser, Speed, Title, Variant, VariantKey};
 use serde::{Deserialize, Serialize};
 use serde_with::skip_serializing_none;
 
@@ -75,6 +75,7 @@ pub struct ChallengeOpenJson {
 #[derive(Clone, Debug, Deserialize, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct ChallengeCreated {
+    #[serde(flatten)]
     pub challenge: ChallengeJson,
 }
 
@@ -86,6 +87,7 @@ pub struct ChallengeJson {
     pub base: ChallengeJsonBase,
     pub initial_fen: Option<String>,
     pub decline_reason: Option<String>,
+    pub decline_reason_key: Option<String>,
 }
 
 #[skip_serializing_none]
@@ -96,6 +98,7 @@ pub struct ChallengeJsonBase {
     pub url: String,
     pub color: Color,
     pub direction: Option<Direction>,
+    pub final_color: String,
     pub time_control: TimeControl,
     pub variant: Variant,
 
@@ -147,13 +150,16 @@ pub enum TimeControl {
     Unlimited,
 }
 
-#[skip_serializing_none]
 #[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct ChallengeUser {
     #[serde(flatten)]
     pub user: LightUser,
     pub rating: u32,
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub provisional: Option<bool>,
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub online: Option<bool>,
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub lag: Option<u32>,
+    pub title: Option<Title>,
 }

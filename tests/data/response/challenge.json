@@ -1,43 +1,38 @@
 {
     "type": "challenge",
     "challenge": {
-        "id": "7pGLxJ4F",
-        "url": "https://lichess.org/VU0nyvsW",
+        "id": "HVGoj16M",
+        "url": "https://lichess.org/HVGoj16M",
         "status": "created",
         "challenger": {
-            "id": "lovlas",
-            "name": "Lovlas",
-            "title": "IM",
-            "rating": 2506,
-            "patron": true,
-            "online": true,
-            "lag": 24
+            "id": "adriana",
+            "name": "Adriana",
+            "rating": 584,
+            "title": null
         },
         "destUser": {
-            "id": "thibot",
-            "name": "thibot",
-            "rating": 1500,
-            "provisional": true,
-            "online": true,
-            "lag": 45
+            "id": "gabriela",
+            "name": "Gabriela",
+            "rating": 1569,
+            "title": null,
+            "flair": "people.pregnant-person-light-skin-tone",
+            "online": true
         },
         "variant": {
             "key": "standard",
             "name": "Standard",
             "short": "Std"
         },
-        "rated": true,
+        "rated": false,
+        "speed": "correspondence",
         "timeControl": {
-            "type": "clock",
-            "limit": 300,
-            "increment": 25,
-            "show": "5+25"
+            "type": "unlimited"
         },
         "color": "random",
-        "speed": "rapid",
+        "finalColor": "black",
         "perf": {
-            "icon": "#",
-            "name": "Rapid"
+            "icon": "",
+            "name": "Correspondence"
         }
     },
     "compat": {

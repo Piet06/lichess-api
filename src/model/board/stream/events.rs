@@ -2,6 +2,7 @@ use crate::model::challenges::ChallengeJson;
 use crate::model::{Color, Compat, Speed, Variant};
 use serde::{Deserialize, Serialize};
 use serde_with::skip_serializing_none;
+use crate::model::games::stream::moves::Status;
 
 #[derive(Default, Clone, Debug, Serialize)]
 pub struct GetQuery;
@@ -47,6 +48,7 @@ pub enum EventData {
 pub struct GameEventInfo {
     pub full_id: String,
     pub game_id: String,
+    pub id: String,
     pub fen: String,
     pub color: Color,
     pub last_move: String,
@@ -61,6 +63,7 @@ pub struct GameEventInfo {
     pub seconds_left: Option<u64>,
     pub compat: Option<Compat>,
     pub winner: Option<String>,
+    pub status: Status,
 }
 
 #[derive(Clone, Debug, Deserialize, PartialEq, Eq, Serialize)]
